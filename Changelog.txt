@@ -1,0 +1,9 @@
+Known Issues:
+
+Cleave and Unstoppable Charge Skills do not support partial Splash chance for 1-2 points invested. Instead worst case scenario of no unit splashing is assumed.
+Army size is not checked
+output not complete
+
+15.05.  Added General Skillsystem basics(untested)
+		Refactored first existing Units
+		Added single army simulation
