@@ -9,9 +9,11 @@ public class Simulation {
 
     private ArrayList<Unit> initialMonsterUnits = new ArrayList<>();
     private ArrayList<Unit> initialPlayerUnits = new ArrayList<>();
+    ArrayList<Unit> combinedLoss = new ArrayList<>();
 
 
     private void setupSim(ArrayList<Unit> initialMonsterUnits, ArrayList<Unit> initialPlayerUnits){
+        combinedLoss = new ArrayList<>();
         this.initialMonsterUnits = initialMonsterUnits;
         this.initialPlayerUnits = initialPlayerUnits;
         //solve all unit altering general skills
@@ -111,9 +113,9 @@ public class Simulation {
         setupSim(initialMonsterUnits,initialPlayerUnits);
     }
 
-    public String simulation(int simulationSize){
+    public ArrayList<ArrayList<Unit>> simulation(int simulationSize){
 
-        ArrayList<Unit> combinedLoss = new ArrayList<>();
+
         ArrayList<Unit> maxLoss = new ArrayList<>();
         ArrayList<Unit> minLoss = new ArrayList<>();
         for (int i = 0; i< simulationSize; i++){
@@ -157,27 +159,13 @@ public class Simulation {
                 }
             }
         }
-        StringBuilder builder = new StringBuilder();
-        builder.append("Average losses:");
-        builder.append(System.getProperty("line.separator"));
-        for (Unit u:combinedLoss) {
-            builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits()/(double) simulationSize);
-            builder.append(System.getProperty("line.separator"));
-        }
-        builder.append("Minimum losses:");
-        builder.append(System.getProperty("line.separator"));
-        for (Unit u:minLoss) {
-            builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits());
-            builder.append(System.getProperty("line.separator"));
-        }
-        builder.append("Maximum losses:"+System.getProperty("line.separator"));
+        ArrayList<ArrayList<Unit>> result = new ArrayList<>();
+        result.add(combinedLoss);
+        result.add(minLoss);
+        result.add(maxLoss);
 
-        for (Unit u:maxLoss) {
-            builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits());
-            builder.append(System.getProperty("line.separator"));
-        }
 
-        return builder.toString();
+        return result;
 
     }
 }
