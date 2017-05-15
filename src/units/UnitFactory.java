@@ -25,12 +25,41 @@ public class UnitFactory {
         return g;
     }
 
-    //player elite units
+    //region elite units
     public Unit createPlayerMa(int remainingUnits){
         return new Unit("PlayerMa",50,50,100,0.9,2.3,2.0,false,false,remainingUnits);
     }
 
-    //player standard units
+    public Unit createPlayerSM(int remainingUnits){
+        return new Unit("PlayerSM",150,40,80,0.9,2.3,2.0,false,false,remainingUnits);
+    }
+
+    public Unit createPlayerMS(int remainingUnits){
+        return new Unit("PlayerMS",250,25,50,0.9,2.3,2.0,false,false,remainingUnits);
+    }
+
+    public Unit createPlayerK(int remainingUnits){
+        return new Unit("PlayerK",80,35,70,0.9,1,2.0,false,false,remainingUnits);
+    }
+
+    public Unit createPlayerMA(int remainingUnits){
+        return new Unit("PlayerMA",50,50,100,0.9,2.3,2.0,false,false,remainingUnits);
+    }
+
+    public Unit createPlayerAM(int remainingUnits){
+        return new Unit("PlayerAM",50,100,200,0.9,2.3,2.0,false,false,remainingUnits);
+    }
+
+    public Unit createPlayerMM(int remainingUnits){
+        return new Unit("PlayerSM",50,50,100,0.9,1,2.0,false,false,remainingUnits);
+    }
+
+    public Unit createPlayerB(int remainingUnits){
+        return new Unit("PlayerB",80,100,200,0.9,2.3,2.0,false,false,remainingUnits);
+    }
+    //endregion
+
+    //region standard units
     public Unit createPlayerR(int remainingUnits){
         return new Unit("PlayerR",40,15,30,0.8,2,1,false,false,remainingUnits);
     }
@@ -51,8 +80,8 @@ public class UnitFactory {
         return new Unit("PlayerC",5,5,10,0.8,1,2,false,false,remainingUnits);
     }
 
-    public Unit createPlayerB(int remainingUnits){
-        return new Unit("PlayerB",10,20,40,0.8,2,2.1,false,false,remainingUnits);
+    public Unit createPlayerBow(int remainingUnits){
+        return new Unit("PlayerBow",10,20,40,0.8,2,2.1,false,false,remainingUnits);
     }
 
     public Unit createPlayerLB(int remainingUnits){
@@ -66,6 +95,7 @@ public class UnitFactory {
     public Unit createPlayerCN(int remainingUnits){
         return new Unit("PlayerCN",60,60,120,0.9,3,2.4,false,false,remainingUnits);
     }
+    //endregion
 
     //Bandits
 
