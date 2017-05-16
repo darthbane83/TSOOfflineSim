@@ -133,53 +133,53 @@ public class UnitFactory {
 
     //region Bandits
     public Unit bWildMary(int remainingUnits){
-        Unit u = new Unit("Wild Mary",60000, 740, 800, 0.5, 1,  0, true, false,remainingUnits);
+        Unit u = new Unit("Wild Mary",60000, 740, 800, 0.5, 1,  2.0, true, false,remainingUnits);
         u.setBoss(true);
         return u;
     }
     public Unit bChuck(int remainingUnits){
-        Unit u = new Unit("Chuck",9000, 2000, 2500, 0.5, 3,  0, true, false,remainingUnits);
+        Unit u = new Unit("Chuck",9000, 2000, 2500, 0.5, 3,  3.0, true, false,remainingUnits);
         u.setBoss(true);
         return u;
     }
     public Unit bMetalToothed(int remainingUnits) {
-        Unit u = new Unit("Metal Toothed",11000,250,500,0.5, 3, 0,true,false,remainingUnits);
+        Unit u = new Unit("Metal Toothed",11000,250,500,0.5, 3, 2.0,true,false,remainingUnits);
         u.setBoss(true);
         return u;
     }
     public Unit bScavenger(int remainingUnits){
-        return new Unit("Scavenger",40, 15,30, 0.6, 2, 0,false, false, remainingUnits);
+        return new Unit("Scavenger",40, 15,30, 0.6, 2, 2.1,false, false, remainingUnits);
     }
     public Unit bThug(int remainingUnits) {
-        return new Unit("Thug", 60, 20, 40, 0.6, 2, 0, false, false, remainingUnits);
+        return new Unit("Thug", 60, 20, 40, 0.6, 2.1, 2.2, false, false, remainingUnits);
     }
     public Unit bGuardDog(int remainingUnits) {
-        return new Unit("Guard Dog", 5, 5, 10, 0.6, 1, 0, false, true, remainingUnits);
+        return new Unit("Guard Dog", 5, 5, 10, 0.6, 1, 2.05, false, true, remainingUnits);
     }
     public Unit bRoughneck(int remainingUnits) {
-        return new Unit("Roughneck", 90, 20, 40, 0.6, 2, 0, false, false, remainingUnits);
+        return new Unit("Roughneck", 90, 20, 40, 0.6, 2.2, 2.3, false, false, remainingUnits);
     }
     public Unit bStoneThrower(int remainingUnits) {
-        return new Unit("Stone Thrower", 10, 20, 40, 0.6, 2, 0, false, false, remainingUnits);
+        return new Unit("Stone Thrower", 10, 20, 40, 0.6, 2.3, 2.4, false, false, remainingUnits);
     }
     public Unit bRanger(int remainingUnits) {
-        return new Unit("Ranger", 10, 30, 0, 0.6, 2, 0, false, false, remainingUnits);
+        return new Unit("Ranger", 10, 30, 0, 0.6, 2.4, 2.5, false, false, remainingUnits);
     }
     public Unit bSkunk(int remainingUnits) {
-        Unit u = new Unit("Skunk", 000, 1, 100, 0.5, 3, 0, true, false, remainingUnits);
+        Unit u = new Unit("Skunk", 100, 1, 100, 0.5, 3, 2.6, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
     public Unit bOneEyedBert(int remainingUnits) {
-        Unit u = new Unit("One-Eyed Bert", 6000, 300, 500, 0.5, 3, 0, true, false, remainingUnits);
+        Unit u = new Unit("One-Eyed Bert", 6000, 300, 500, 0.5, 3.1, 2.7, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
     //endregion
 
-    //cultists
+    //region cultists
 
-
+    //endregion
 
 
 
@@ -218,9 +218,40 @@ public class UnitFactory {
     }
     //endregion
 
-
+    //region Deserter
+    public Unit ElitesoldierDeserter(int remainingUnits){
+        return  new Unit("EliteSoldier Deserter", 120, 20, 40, 0.7, 2.3, 1.3, false, false, remainingUnits);
+    }
+    //endregion
 
     //region Royal
+    //confirmed attack initiative:
+    //confirmed defend initiative:
+
+    public Unit evilQueenIlsebille(int remainingUnits){
+        Unit u = new Unit("Ilsebille, the Evil Queen", 95000, 400, 600, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit RoyalRecruit(int remainingUnits){
+        return  new Unit("Royal Recruit", 120, 30, 60, 0.85, 2.0, 1.0, false, false, remainingUnits);
+    }
+    public Unit RoyalMilitia(int remainingUnits){
+        return  new Unit("Royal Militia", 160, 70, 90, 0.95, 2.1, 1.1, true, false, remainingUnits);
+    }
+    public Unit RoyalBowman(int remainingUnits){
+        return  new Unit("Royal Bowman", 40, 60, 120, 0.85, 2.4, 2.1, false, false, remainingUnits);
+    }
+    public Unit RoyalLongbowman(int remainingUnits){
+        return  new Unit("Royal Longbowman", 60, 80, 140, 0.95, 2.5, 2.2, true, false, remainingUnits);
+    }
+    public Unit RoyalCavalry(int remainingUnits){
+        return  new Unit("Royal Cavalry", 40, 10, 60, 0.95, 1.0, 2.3, false, true, remainingUnits);
+    }
+    public Unit RoyalCannoneer(int remainingUnits){
+        return  new Unit("Royal Cannoneer", 200, 60, 90, 0.95, 3.0, 2.6, true, false, remainingUnits);
+    }
+
 /*    public Unit excRoyalHuntLead(int remainingUnits){
         return new Unit(""  ,45000, [200, 700], 80, Initiative.THIRD, getAID(), [Skills.SPLASH_DAMAGE], "todo")
     }
@@ -236,7 +267,7 @@ public class UnitFactory {
     */
     //endregion
 
-    //Deserter
+
 
     //Ali baba
 

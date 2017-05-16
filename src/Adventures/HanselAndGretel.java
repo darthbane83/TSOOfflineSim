@@ -81,6 +81,19 @@ public class HanselAndGretel extends Adventure {
             u3 = factory.epGiant(50);
             u4 = factory.furiousBoar(1);
         }
+        if(i==14){
+            u1 = factory.RoyalRecruit(150);
+            u2 = factory.RoyalMilitia(100);
+        }
+        if(i==15){
+            u1 = factory.RoyalBowman(200);
+            u2 = factory.RoyalMilitia(100);
+        }
+        if(i==16){
+            u1 = factory.RoyalLongbowman(75);
+            u2 = factory.RoyalMilitia(75);
+            u3 = factory.RoyalCavalry(100);
+        }
 
 
         if(!u1.getName().equals("default")){
