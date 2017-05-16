@@ -14,7 +14,10 @@ public class SimulateSingleCamp {
         ArrayList<Unit> initialPlayerUnitsMMA1R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnits2MMA1R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnits3MMA1R = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnitsMMA220R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnits200R = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnitsNusala165R = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnitsNusala165Bow = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnitsFinalWave = new ArrayList<>();
         StringBuilder builder = new StringBuilder();
 
@@ -29,6 +32,12 @@ public class SimulateSingleCamp {
         initialPlayerUnitsNusala1R.add(factory.createCustomNusala());
         initialPlayerUnitsNusala1R.add(factory.createPlayerR(1));
 
+        initialPlayerUnitsNusala165R.add(factory.createCustomNusala());
+        initialPlayerUnitsNusala165R.add(factory.createPlayerR(165));
+
+        initialPlayerUnitsNusala165Bow.add(factory.createCustomNusala());
+        initialPlayerUnitsNusala165Bow.add(factory.createPlayerBow(165));
+
         initialPlayerUnitsMMA1R.add(factory.createMMA());
         initialPlayerUnitsMMA1R.add(factory.createPlayerR(1));
 
@@ -41,17 +50,29 @@ public class SimulateSingleCamp {
         initialPlayerUnits200R.add(factory.create270());
         initialPlayerUnits200R.add(factory.createPlayerR(200));
 
+        initialPlayerUnitsMMA220R.add(factory.createMMA());
+        initialPlayerUnitsMMA220R.add(factory.createPlayerR(220));
 
 
+
+        //initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
         initialPlayerUnitsFinalWave.add(factory.create270());
-        initialPlayerUnitsFinalWave.add(factory.createPlayerMS(63));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerK(61));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerB(146));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(270));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerMS(10));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerK(18));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerMA(5));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerMM(250));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerAM(260));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerB(43));
 
-        initialPlayerUnits.add(initialPlayerUnitsNusala1R);
+
+        //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
+        //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
+        //initialPlayerUnits.add(initialPlayerUnits200R);
         initialPlayerUnits.add(initialPlayerUnitsMMA1R);
         initialPlayerUnits.add(initialPlayerUnits2MMA1R);
-        initialPlayerUnits.add(initialPlayerUnits3MMA1R);
+        //initialPlayerUnits.add(initialPlayerUnits3MMA1R);
+        initialPlayerUnits.add(initialPlayerUnitsMMA220R);
         initialPlayerUnits.add(initialPlayerUnitsFinalWave);
 
         /* setup monster units
@@ -61,9 +82,9 @@ public class SimulateSingleCamp {
         Adventure addy = new HanselAndGretel();
         initialMonsterUnits = addy.createCamp(1);
         */
-
         Adventure addy = new HanselAndGretel();
-        initialMonsterUnits = addy.createCamp(8);
+        initialMonsterUnits = addy.createCamp(26);
+
 
         for (Unit u:initialMonsterUnits) {
             nextWaveMonsterUnits.add(u.copy());
@@ -87,18 +108,19 @@ public class SimulateSingleCamp {
 
             builder.append("Wave " + i +": ");
             builder.append(System.getProperty("line.separator"));
-            builder.append("Average losses:");
-            builder.append(System.getProperty("line.separator"));
-            for (Unit u:averageCombinedLoss) {
-                builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits()/(double) simulationSize);
-                builder.append(System.getProperty("line.separator"));
-            }
             builder.append("Minimum losses:");
             builder.append(System.getProperty("line.separator"));
             for (Unit u:minLoss) {
                 builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits());
                 builder.append(System.getProperty("line.separator"));
             }
+            builder.append("Average losses:");
+            builder.append(System.getProperty("line.separator"));
+            for (Unit u:averageCombinedLoss) {
+                builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits()/(double) simulationSize);
+                builder.append(System.getProperty("line.separator"));
+            }
+
             builder.append("Maximum losses:"+System.getProperty("line.separator"));
 
             for (Unit u:maxLoss) {

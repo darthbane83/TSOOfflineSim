@@ -185,14 +185,17 @@ public class UnitFactory {
 
     //region Wildlife
     /*
-    * defend initiative info: Boar<wolfpackleader<Fox<Giant
-    *                           Bear<Wolf<Giant
-    *                           Bear<Fox
+    * defend initiative info: Boar<wolfpackleader<Fox<Giant<furious boar
+    *                           Bear<Wolf<Fox<Giant<Deer
     *                           Boar<Wolf
     * attack initiative info:
-
+        boar<furious boar
     *
     * */
+
+    public Unit epDeer(int remainingUnits){
+        return new Unit("Deer", 15, 5, 10, 0.8, 2.7, 2.8, false, false, remainingUnits);
+    }
     public Unit epBoar(int remainingUnits){
         return new Unit("Boar", 100, 30, 60, 0.85, 2.0, 1.0, false, false, remainingUnits);
     }
@@ -219,36 +222,41 @@ public class UnitFactory {
     //endregion
 
     //region Deserter
-    public Unit ElitesoldierDeserter(int remainingUnits){
+    public Unit elitesoldierDeserter(int remainingUnits){
         return  new Unit("EliteSoldier Deserter", 120, 20, 40, 0.7, 2.3, 1.3, false, false, remainingUnits);
     }
     //endregion
 
     //region Royal
-    //confirmed attack initiative:
-    //confirmed defend initiative:
+    //confirmed attack initiative:  recruit<militia
+    //confirmed defend initiative: recruit<militia<bowman
+    //                                     militia      <longbowman<cavalry<Cannoneers
+    //                           Elite Soldier Deserter <longbowman<cavalry<Cannoneers
+    //                          
+
+    //
 
     public Unit evilQueenIlsebille(int remainingUnits){
         Unit u = new Unit("Ilsebille, the Evil Queen", 95000, 400, 600, 0.8, 2.9, 3, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
-    public Unit RoyalRecruit(int remainingUnits){
+    public Unit royalRecruit(int remainingUnits){
         return  new Unit("Royal Recruit", 120, 30, 60, 0.85, 2.0, 1.0, false, false, remainingUnits);
     }
-    public Unit RoyalMilitia(int remainingUnits){
+    public Unit royalMilitia(int remainingUnits){
         return  new Unit("Royal Militia", 160, 70, 90, 0.95, 2.1, 1.1, true, false, remainingUnits);
     }
-    public Unit RoyalBowman(int remainingUnits){
+    public Unit royalBowman(int remainingUnits){
         return  new Unit("Royal Bowman", 40, 60, 120, 0.85, 2.4, 2.1, false, false, remainingUnits);
     }
-    public Unit RoyalLongbowman(int remainingUnits){
+    public Unit royalLongbowman(int remainingUnits){
         return  new Unit("Royal Longbowman", 60, 80, 140, 0.95, 2.5, 2.2, true, false, remainingUnits);
     }
-    public Unit RoyalCavalry(int remainingUnits){
+    public Unit royalCavalry(int remainingUnits){
         return  new Unit("Royal Cavalry", 40, 10, 60, 0.95, 1.0, 2.3, false, true, remainingUnits);
     }
-    public Unit RoyalCannoneer(int remainingUnits){
+    public Unit royalCannoneer(int remainingUnits){
         return  new Unit("Royal Cannoneer", 200, 60, 90, 0.95, 3.0, 2.6, true, false, remainingUnits);
     }
 

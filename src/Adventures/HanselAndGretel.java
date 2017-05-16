@@ -1,6 +1,5 @@
 package Adventures;
 
-import Adventures.Adventure;
 import units.Unit;
 import units.UnitFactory;
 
@@ -82,17 +81,70 @@ public class HanselAndGretel extends Adventure {
             u4 = factory.furiousBoar(1);
         }
         if(i==14){
-            u1 = factory.RoyalRecruit(150);
-            u2 = factory.RoyalMilitia(100);
+            u1 = factory.royalRecruit(150);
+            u2 = factory.royalMilitia(100);
         }
         if(i==15){
-            u1 = factory.RoyalBowman(200);
-            u2 = factory.RoyalMilitia(100);
+            u1 = factory.royalBowman(200);
+            u2 = factory.royalMilitia(100);
         }
         if(i==16){
-            u1 = factory.RoyalLongbowman(75);
-            u2 = factory.RoyalMilitia(75);
-            u3 = factory.RoyalCavalry(100);
+            u1 = factory.royalLongbowman(75);
+            u2 = factory.royalMilitia(75);
+            u3 = factory.royalCavalry(100);
+        }
+        if(i==17){
+            u1 = factory.epWolfPackleader(150);
+            u2 = factory.epFox(150);
+            u3 = factory.epDeer(50);
+        }
+        if(i==18){
+            u1 = factory.epDeer(50);
+            u2 = factory.epBoar(200);
+            u3 = factory.epGiant(150);
+        }
+        if(i==19){
+            u1 = factory.epWolf(200);
+            u2 = factory.epFox(150);
+            u3 = factory.epDeer(50);
+        }
+        if(i==20){
+            u1 = factory.elitesoldierDeserter(100);
+            u2 = factory.royalLongbowman(150);
+
+        }
+        if(i==21){
+            u1 = factory.royalRecruit(200);
+            u2 = factory.royalMilitia(150);
+        }
+        if(i==22){
+            u1 = factory.royalCannoneer(50);
+            u2 = factory.royalCavalry(150);
+            u3 = factory.elitesoldierDeserter(50);
+        }
+        if(i==23){
+            u1 = factory.royalRecruit(150);
+            u2 = factory.royalMilitia(50);
+        }
+        if(i==24){
+            u1 = factory.royalCannoneer(100);
+            u2 = factory.royalCavalry(150);
+            u3 = factory.elitesoldierDeserter(75);
+        }
+        if(i==25){
+            u1 = factory.royalRecruit(125);
+            u2 = factory.royalMilitia(75);
+        }
+        if(i==26){
+            u1 = factory.royalCavalry(100);
+            u2 = factory.royalCannoneer(250);
+        }
+        if(i==27){
+            u1 = factory.royalLongbowman(100);
+            u2 = factory.royalMilitia(175);
+            u3 = factory.royalCannoneer(70);
+            u4 = factory.evilQueenIlsebille(1);
+
         }
 
 
