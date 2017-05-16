@@ -71,7 +71,13 @@ public class Unit {
 
 
     public Unit copy(){
-        return new Unit(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking(),getRemainingUnits());
+        if (this.isGeneral()){
+            General g = new General(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking());
+            return g;
+        }
+        else{
+            return new Unit(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking(),getRemainingUnits());
+        }
     }
 
     public int getRemainingUnits() {

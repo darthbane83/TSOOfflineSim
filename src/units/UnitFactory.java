@@ -9,7 +9,8 @@ public class UnitFactory {
     }
 
 
-//skilled example Generals
+    //region Generals
+    //skilled example Generals
     public Unit createCustomAnslem(){
         General g = new General("Anslem",150,1000,1500,0.5,2.7,3,true,true);
         g.setMaxUnits(150);
@@ -20,11 +21,27 @@ public class UnitFactory {
         return g;
     }
 
+    public Unit createCustomNusala(){
+        General g = new General("Nusala",150,1000,1500,0.90,1.1,3,true,true);
+        g.setMaxUnits(165);
+        g.setGeneral(true);
+        g.setRapidFire(3);
+        return g;
+
+    }
+
 
     //General
     public Unit createNusala(){
         General g = new General("Nusala",150,1000,1500,0.90,1.1,3,true,true);
         g.setMaxUnits(165);
+        g.setGeneral(true);
+        return g;
+
+    }
+    public Unit createMMA(){
+        General g = new General("MMA",2,450,500,0.80,1.1,3,true,true);
+        g.setMaxUnits(220);
         g.setGeneral(true);
         return g;
 
@@ -41,6 +58,7 @@ public class UnitFactory {
         g.setGeneral(true);
         return g;
     }
+    //endregion
 
 
     //region Elite units
@@ -158,10 +176,15 @@ public class UnitFactory {
         return u;
     }
     //endregion
+
     //cultists
 
 
-    /* wildlife
+
+
+
+    //region Wildlife
+    /*
     * defend initiative info: Boar<wolfpackleader<Fox<Giant
     *                           Bear<Wolf<Giant
     *                           Bear<Fox
@@ -170,8 +193,6 @@ public class UnitFactory {
 
     *
     * */
-
-
     public Unit epBoar(int remainingUnits){
         return new Unit("Boar", 100, 30, 60, 0.85, 2.0, 1.0, false, false, remainingUnits);
     }
@@ -195,6 +216,7 @@ public class UnitFactory {
         u.setBoss(true);
         return u;
     }
+    //endregion
 
 
 
@@ -211,8 +233,8 @@ public class UnitFactory {
     cu.excEvilStepMother = new Unit("",       95000, [400, 600], 80, Initiative.SECOND, getAID(), [Skills.SPLASH_DAMAGE], "todo");
     cu.excPreacherFlame  = new Unit("",       11000, [500, 700], 75, Initiative.THIRD, getAID(), [Skills.SPLASH_DAMAGE, Skills.ATTACK_WEAKEST], "todo");
     cu.excAncientDragon  = new Unit("",       50000, [500, 750], 50, Initiative.FIRST, getAID(), [Skills.SPLASH_DAMAGE], "todo");
-    //endregion
     */
+    //endregion
 
     //Deserter
 

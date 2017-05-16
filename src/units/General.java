@@ -69,35 +69,35 @@ public class General extends Unit {
     }
 
     public int getSniperTraining() {
-        return SniperTraining;
+        return sniperTraining;
     }
 
     public void setSniperTraining(int sniperTraining) {
-        SniperTraining = sniperTraining;
+        this.sniperTraining = sniperTraining;
     }
 
     public int getOverrun() {
-        return Overrun;
+        return overrun;
     }
 
     public void setOverrun(int overrun) {
-        Overrun = overrun;
+        this.overrun = overrun;
     }
 
     public int getRapidFire() {
-        return RapidFire;
+        return rapidFire;
     }
 
     public void setRapidFire(int rapidFire) {
-        RapidFire = rapidFire;
+        this.rapidFire = rapidFire;
     }
 
     public int getJuggernaut() {
-        return Juggernaut;
+        return juggernaut;
     }
 
     public void setJuggernaut(int juggernaut) {
-        Juggernaut = juggernaut;
+        this.juggernaut = juggernaut;
     }
 
     public int maxUnits = 0;
@@ -108,11 +108,30 @@ public class General extends Unit {
     public int garrisonAnnex = 0;
     public int unstoppableCharge = 0;
     public int battleFrenzy = 0;
-    public int SniperTraining = 0;
-    public int Overrun = 0;
-    public int RapidFire = 0;
-    public int Juggernaut = 0;
+    public int sniperTraining = 0;
+    public int overrun = 0;
+    public int rapidFire = 0;
+    public int juggernaut = 0;
 
+
+    @Override
+    public Unit copy(){
+        General g = new General(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking());
+        g.setMaxUnits(this.maxUnits);
+        g.setMasterPlanner(this.masterPlanner);
+        g.setLightningSlash(this.lightningSlash);
+        g.setCleave(this.cleave);
+        g.setWeeklyMaintenance(this.weeklyMaintenance);
+        g.setGarrisonAnnex(garrisonAnnex);
+        g.setUnstoppableCharge(unstoppableCharge);
+        g.setBattleFrenzy(battleFrenzy);
+        g.setSniperTraining(sniperTraining);
+        g.setOverrun(overrun);
+        g.setRapidFire(rapidFire);
+        g.setJuggernaut(juggernaut);
+        g.setRemainingUnits(getRemainingUnits());
+        return g;
+    }
 
     @Override
     public boolean isGeneral() {
