@@ -70,7 +70,7 @@ public class Simulation {
                             u2.setSplash(true);
                         }
                     }
-                    if(u2.getName().equals("PlayerCN")||u2.getName().equals("PlayerBe")){
+                    if(u2.getName().equals("PlayerCN")||u2.getName().equals("PlayerB")){
                         u2.setMinDamage(u2.getMinDamage()+5*g.getWeeklyMaintenance());
                         u2.setMaxDamage(u2.getMaxDamage()+10*g.getWeeklyMaintenance());
                     }
@@ -163,6 +163,8 @@ public class Simulation {
         result.add(combinedLoss);
         result.add(minLoss);
         result.add(maxLoss);
+
+
 
 
         return result;

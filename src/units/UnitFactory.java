@@ -9,33 +9,53 @@ public class UnitFactory {
     }
 
 
-
+//skilled example Generals
+    public Unit createCustomAnslem(){
+        General g = new General("Anslem",150,1000,1500,0.5,2.7,3,true,true);
+        g.setMaxUnits(150);
+        g.setGeneral(true);
+        g.setOverrun(3);
+        g.setBattleFrenzy(3);
+        g.setGarrisonAnnex(3);
+        return g;
+    }
 
 
     //General
     public Unit createNusala(){
         General g = new General("Nusala",150,1000,1500,0.90,1.1,3,true,true);
         g.setMaxUnits(165);
+        g.setGeneral(true);
         return g;
 
     }
     public Unit create270(){
-        General g = new General("270",1,120,120,1,2.7,2.5,false,false);
+        General g = new General("270",1,120,120,1,2.7,3,false,false);
         g.setMaxUnits(270);
+        g.setGeneral(true);
+        return g;
+    }
+    public Unit createAnslem(){
+        General g = new General("Anslem",150,1000,1500,0.5,2.7,3,true,true);
+        g.setMaxUnits(150);
+        g.setGeneral(true);
         return g;
     }
 
+
     //region Elite units
+    //known defend initiative:
+    //known attack initiative:
     public Unit createPlayerSM(int remainingUnits){
-        return new Unit("PlayerSM",150,40,80,0.9,2,2.0,false,false,remainingUnits);
+        return new Unit("PlayerSM",150,40,80,0.9,2,1.0,false,false,remainingUnits);
     }
 
     public Unit createPlayerMS(int remainingUnits){
-        return new Unit("PlayerMS",250,25,50,0.9,2,2.0,false,false,remainingUnits);
+        return new Unit("PlayerMS",250,25,50,0.9,2.1,1.1,false,false,remainingUnits);
     }
 
     public Unit createPlayerK(int remainingUnits){
-        return new Unit("PlayerK",80,35,70,0.9,1,2.0,false,false,remainingUnits);
+        return new Unit("PlayerK",80,35,70,0.9,1,1.2,false,false,remainingUnits);
     }
 
     public Unit createPlayerMA(int remainingUnits){
@@ -43,11 +63,11 @@ public class UnitFactory {
     }
 
     public Unit createPlayerAM(int remainingUnits){
-        return new Unit("PlayerAM",50,100,200,0.9,2,2.0,false,true,remainingUnits);
+        return new Unit("PlayerAM",50,100,200,0.9,2,2.1,false,true,remainingUnits);
     }
 
     public Unit createPlayerMM(int remainingUnits){
-        return new Unit("PlayerSM",50,50,100,0.9,1,2.0,true,false,remainingUnits);
+        return new Unit("PlayerMM",50,50,100,0.9,1,2.2,true,false,remainingUnits);
     }
 
     public Unit createPlayerB(int remainingUnits){
@@ -95,13 +115,19 @@ public class UnitFactory {
 
     //region Bandits
     public Unit bWildMary(int remainingUnits){
-        return new Unit("Wild Mary",60000, 740, 800, 0.5, 1,  0, true, false,remainingUnits);
+        Unit u = new Unit("Wild Mary",60000, 740, 800, 0.5, 1,  0, true, false,remainingUnits);
+        u.setBoss(true);
+        return u;
     }
     public Unit bChuck(int remainingUnits){
-        return new Unit("Chuck",9000, 2000, 2500, 0.5, 3,  0, true, false,remainingUnits);
+        Unit u = new Unit("Chuck",9000, 2000, 2500, 0.5, 3,  0, true, false,remainingUnits);
+        u.setBoss(true);
+        return u;
     }
     public Unit bMetalToothed(int remainingUnits) {
-        return new Unit("Metal Toothed",11000,250,500,0.5, 3, 0,true,false,remainingUnits);
+        Unit u = new Unit("Metal Toothed",11000,250,500,0.5, 3, 0,true,false,remainingUnits);
+        u.setBoss(true);
+        return u;
     }
     public Unit bScavenger(int remainingUnits){
         return new Unit("Scavenger",40, 15,30, 0.6, 2, 0,false, false, remainingUnits);
@@ -122,18 +148,58 @@ public class UnitFactory {
         return new Unit("Ranger", 10, 30, 0, 0.6, 2, 0, false, false, remainingUnits);
     }
     public Unit bSkunk(int remainingUnits) {
-        return new Unit("Skunk", 000, 1, 100, 0.5, 3, 0, true, false, remainingUnits);
+        Unit u = new Unit("Skunk", 000, 1, 100, 0.5, 3, 0, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
     }
     public Unit bOneEyedBert(int remainingUnits) {
-        return new Unit("One-Eyed Bert", 6000, 300, 500, 0.5, 3, 0, true, false, remainingUnits);
+        Unit u = new Unit("One-Eyed Bert", 6000, 300, 500, 0.5, 3, 0, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
     }
     //endregion
     //cultists
 
-    //animals
+
+    /* wildlife
+    * defend initiative info: Boar<wolfpackleader<Fox<Giant
+    *                           Bear<Wolf<Giant
+    *                           Bear<Fox
+    *                           Boar<Wolf
+    * attack initiative info:
+
+    *
+    * */
+
+
+    public Unit epBoar(int remainingUnits){
+        return new Unit("Boar", 100, 30, 60, 0.85, 2.0, 1.0, false, false, remainingUnits);
+    }
+    public Unit epBear(int remainingUnits){
+        return new Unit("Bear", 140, 70, 90, 0.95, 2.1, 1.1, true, false, remainingUnits);
+    }
+    public Unit epWolf(int remainingUnits){
+        return new Unit("Wolf", 40, 60, 100, 0.85, 2.2, 2.0, false, false, remainingUnits);
+    }
+    public Unit epWolfPackleader(int remainingUnits){
+        return new Unit("Wolf Packleader", 60, 80, 120, 0.95, 2.3, 2.1, true, false, remainingUnits);
+    }
+    public Unit epFox(int remainingUnits){
+        return new Unit("Fox", 30, 10, 40, 0.95, 1.0, 2.3, false, true, remainingUnits);
+    }
+    public Unit epGiant(int remainingUnits){
+        return new Unit("Giant", 160, 60, 90, 0.95, 3.0, 2.4, true, false, remainingUnits);
+    }
+    public Unit furiousBoar(int remainingUnits){
+        Unit u = new Unit("Furious Boar", 50000, 200, 300, 0.9, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+
+
 
     //region Royal
-    public Unit excRoyalHuntLead(int remainingUnits){
+/*    public Unit excRoyalHuntLead(int remainingUnits){
         return new Unit(""  ,45000, [200, 700], 80, Initiative.THIRD, getAID(), [Skills.SPLASH_DAMAGE], "todo")
     }
     cu.excEvilQueen      = new Unit("",       95000, [400, 600], 80, Initiative.SECOND, getAID(), [Skills.SPLASH_DAMAGE], "todo");
@@ -146,6 +212,7 @@ public class UnitFactory {
     cu.excPreacherFlame  = new Unit("",       11000, [500, 700], 75, Initiative.THIRD, getAID(), [Skills.SPLASH_DAMAGE, Skills.ATTACK_WEAKEST], "todo");
     cu.excAncientDragon  = new Unit("",       50000, [500, 750], 50, Initiative.FIRST, getAID(), [Skills.SPLASH_DAMAGE], "todo");
     //endregion
+    */
 
     //Deserter
 

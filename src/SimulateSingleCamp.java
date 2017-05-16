@@ -1,3 +1,4 @@
+import Adventures.*;
 import units.*;
 
 import java.util.ArrayList;
@@ -16,19 +17,31 @@ public class SimulateSingleCamp {
         ArrayList<Unit> initialMonsterUnits = new ArrayList<>();
         ArrayList<Unit> nextWaveMonsterUnits = new ArrayList<>();
 
+
+        //setup player waves
+
         UnitFactory factory = new UnitFactory();
-        initialPlayerUnitsWave1.add(factory.createNusala());
-        initialPlayerUnitsWave1.add(factory.createPlayerR(1));
+        initialPlayerUnitsWave1.add(factory.createCustomAnslem());
+        initialPlayerUnitsWave1.add(factory.createPlayerMS(63));
+        initialPlayerUnitsWave1.add(factory.createPlayerK(61));
+        initialPlayerUnitsWave1.add(factory.createPlayerB(41));
 
         initialPlayerUnitsWave2.add(factory.create270());
         initialPlayerUnitsWave2.add(factory.createPlayerR(200));
 
         initialPlayerUnits.add(initialPlayerUnitsWave1);
-
         initialPlayerUnits.add(initialPlayerUnitsWave2);
 
+        /* setup monster units
+        example1:
         initialMonsterUnits.add(factory.bScavenger(200));
+        example 2:
+        Adventure addy = new HanselAndGretel();
+        initialMonsterUnits = addy.createCamp(1);
+        */
 
+        Adventure addy = new HanselAndGretel();
+        initialMonsterUnits = addy.createCamp(8);
 
         for (Unit u:initialMonsterUnits) {
             nextWaveMonsterUnits.add(u.copy());

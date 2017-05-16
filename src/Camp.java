@@ -16,7 +16,7 @@ public class Camp {
 
 
 
-    private int round = 0;
+    private int round = 1;
     private double phase = 0.0 ;
     PriorityQueue<Unit> attackQueuePlayer = new PriorityQueue<Unit>(new Comparator<Unit>() {
         @Override
@@ -146,7 +146,7 @@ public class Camp {
                         if(g.isGeneral()){
                             General g1 = (General)g;
                             //multiplier=0 if battle frenzy not taken.
-                            double multiplier=0.1*g1.getBattleFrenzy()*(double)round;
+                            double multiplier=0.1*g1.getBattleFrenzy()*((double)round-1);
                             damage=(int)Math.floor((double)damage*(1+multiplier));
                         }
                     }
@@ -348,6 +348,7 @@ public class Camp {
                 lossUnits.add(initial);
             }
         }
+        System.out.println("Rounds: " + round);
         return lossUnits;
 
     }
