@@ -18,6 +18,7 @@ public class UnitFactory {
         g.setOverrun(3);
         g.setBattleFrenzy(3);
         g.setGarrisonAnnex(3);
+        g.setWeeklyMaintenance(1);
         return g;
     }
 
@@ -65,69 +66,102 @@ public class UnitFactory {
     //known defend initiative:
     //known attack initiative:
     public Unit createPlayerSM(int remainingUnits){
-        return new Unit("PlayerSM",150,40,80,0.9,2,1.0,false,false,remainingUnits);
+        Unit u = new Unit("PlayerSM",150,40,80,0.9,2,1.0,false,false,remainingUnits);
+        u.setValue(1);
+        return u;
     }
 
     public Unit createPlayerMS(int remainingUnits){
-        return new Unit("PlayerMS",250,25,50,0.9,2.1,1.1,false,false,remainingUnits);
+        Unit u = new Unit("PlayerMS",250,25,50,0.9,2.1,1.1,false,false,remainingUnits);
+        u.setValue(1.5);
+        return u;
+
     }
 
     public Unit createPlayerK(int remainingUnits){
-        return new Unit("PlayerK",80,35,70,0.9,1,1.2,false,false,remainingUnits);
+        Unit u = new Unit("PlayerK",80,35,70,0.9,1,1.2,false,false,remainingUnits);
+        u.setValue(1);
+        return u;
     }
 
     public Unit createPlayerMA(int remainingUnits){
-        return new Unit("PlayerMA",50,50,100,0.9,2,2.0,false,false,remainingUnits);
+        Unit u = new Unit("PlayerMA",50,50,100,0.9,2,2.0,false,false,remainingUnits);
+        u.setValue(2);
+        return u;
     }
 
     public Unit createPlayerAM(int remainingUnits){
-        return new Unit("PlayerAM",50,100,200,0.9,2,2.1,false,true,remainingUnits);
+        Unit u = new Unit("PlayerAM",50,100,200,0.9,2,2.1,false,true,remainingUnits);
+        u.setValue(3);
+        return u;
     }
 
     public Unit createPlayerMM(int remainingUnits){
-        return new Unit("PlayerMM",50,50,100,0.9,1,2.2,true,false,remainingUnits);
+        Unit u = new Unit("PlayerMM",50,50,100,0.9,1,2.2,true,false,remainingUnits);
+        u.setValue(3);
+        return u;
     }
 
     public Unit createPlayerB(int remainingUnits){
-        return new Unit("PlayerB",80,100,200,0.9,3,2.0,true,false,remainingUnits);
+        Unit u = new Unit("PlayerB",80,100,200,0.9,3,2.0,true,false,remainingUnits);
+        u.setValue(5);
+        return u;
     }
     //endregion
 
     //region Standard units
     public Unit createPlayerR(int remainingUnits){
-        return new Unit("PlayerR",40,15,30,0.8,2,1,false,false,remainingUnits);
+        Unit u = new Unit("PlayerR",40,15,30,0.8,2,1,false,false,remainingUnits);
+        u.setValue(1);
+        return u;
     }
 
     public Unit createPlayerM(int remainingUnits){
-        return new Unit("PlayerM",60,20,40,0.8,2,1.1,false,false,remainingUnits);
+        Unit u = new Unit("PlayerM",60,20,40,0.8,2,1.1,false,false,remainingUnits);
+        u.setValue(3);
+        return u;
     }
 
     public Unit createPlayerS(int remainingUnits){
-        return new Unit("PlayerS",90,20,40,0.85,2,1.2,false,false,remainingUnits);
+        Unit u = new Unit("PlayerS",90,20,40,0.85,2,1.2,false,false,remainingUnits);
+        u.setValue(5);
+        return u;
     }
 
     public Unit createPlayerES(int remainingUnits){
-        return new Unit("PlayerES",120,20,40,0.9,2,1.3,false,false,remainingUnits);
+        Unit u = new Unit("PlayerES",120,20,40,0.9,2,1.3,false,false,remainingUnits);
+        u.setValue(12);
+        return u;
     }
 
     public Unit createPlayerC(int remainingUnits){
-        return new Unit("PlayerC",5,5,10,0.8,1,2,false,true,remainingUnits);
+        Unit u = new Unit("PlayerC",5,5,10,0.8,1,2,false,true,remainingUnits);
+        u.setValue(4);
+        return u;
     }
 
     public Unit createPlayerBow(int remainingUnits){
-        return new Unit("PlayerBow",10,20,40,0.8,2,2.1,false,false,remainingUnits);
+        Unit u = new Unit("PlayerBow",10,20,40,0.8,2,2.1,false,false,remainingUnits);
+        u.setValue(1.5);
+        return u;
     }
 
     public Unit createPlayerLB(int remainingUnits){
-        return new Unit("PlayerLB",10,30,60,0.8,2,2.2,false,false,remainingUnits);
+        Unit u = new Unit("PlayerLB",10,30,60,0.8,2,2.2,false,false,remainingUnits);
+        u.setValue(3);
+        return u;
     }
 
     public Unit createPlayerXB(int remainingUnits){
-        return new Unit("PlayerXB",10,45,90,0.8,2,2.3,false,false,remainingUnits);
+        Unit u = new Unit("PlayerXB",10,45,90,0.8,2,2.3,false,false,remainingUnits);
+        u.setValue(12);
+        return u;
     }
 
     public Unit createPlayerCN(int remainingUnits){
-        return new Unit("PlayerCN",60,60,120,0.9,3,2.4,false,false,remainingUnits);
+        Unit u = new Unit("PlayerCN",60,60,120,0.9,3,2.4,false,false,remainingUnits);
+        u.setValue(20);
+        return u;
     }
     //endregion
 
@@ -219,6 +253,21 @@ public class UnitFactory {
         u.setBoss(true);
         return u;
     }
+    public Unit giantBogor(int remainingUnits){
+        Unit u = new Unit("Giant Bogor", 90000, 100, 300, 0.6, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit giantGogor(int remainingUnits){
+        Unit u = new Unit("GiantGogor", 70000, 100, 250, 0.8, 2.95, 3.1, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit Unicorn(int remainingUnits){
+        Unit u = new Unit("Unicorn", 30000, 250, 400, 0.9, 2.95, 2.95, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
     //endregion
 
     //region Deserter
@@ -228,11 +277,11 @@ public class UnitFactory {
     //endregion
 
     //region Royal
-    //confirmed attack initiative:  recruit<militia
+    //confirmed attack initiative:  recruit<militia<Ilsebille
     //confirmed defend initiative: recruit<militia<bowman
-    //                                     militia      <longbowman<cavalry<Cannoneers
+    //                                     militia      <longbowman<cavalry<Cannoneers<Ilsebille
     //                           Elite Soldier Deserter <longbowman<cavalry<Cannoneers
-    //                          
+    //
 
     //
 

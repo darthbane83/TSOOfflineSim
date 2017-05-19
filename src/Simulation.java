@@ -42,7 +42,7 @@ public class Simulation {
             }
             if(u.isGeneral()){
                 General g = (General)u;
-                g.setMaxUnits(g.getMaxUnits()+15*g.getGarrisonAnnex());
+
                 if(g.getOverrun()>0){
                     for (Unit m:initialMonsterUnits) {
                         if(m.isBoss()){

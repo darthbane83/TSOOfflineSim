@@ -348,7 +348,7 @@ public class Camp {
                 lossUnits.add(initial);
             }
         }
-        System.out.println("Rounds: " + round);
+        //System.out.println("Rounds: " + round);
         return lossUnits;
 
     }

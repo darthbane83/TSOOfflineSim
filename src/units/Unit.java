@@ -28,16 +28,18 @@ public class Unit {
     private boolean general = false;
     private boolean boss = false;
 
+    public double getValue() {
+        return value;
+    }
 
-    /*
-    player units attackinitiative order:
-    cav, firsttrike gens,Rec,Militia,S, ES ,Bow,LB ,XB ,normal Gens,CN
-    1.0,1.1             ,2.0,2.1,   2.2,2.3,2.4,2.5,2.6,2.7        ,3
+    public void setValue(double value) {
+        this.value = value;
+    }
 
-    player units defendInitiative order:
-    Rec, Militia, S , ES,cav,bow,LB ,XB ,CN ,gens
-    1.0, 1.1    ,1.2,1.3,2.0,2.1,2.2,2.3,2.4,3
-     */
+    private double value = Double.MAX_VALUE;
+
+
+
 
     public Unit(String name, int maxHP, int minDamage, int maxDamage, double accuracy, double attackInitiative, double defendInitiative, boolean splash, boolean flanking, int remainingUnits){
         this.setName(name);
@@ -53,30 +55,19 @@ public class Unit {
         this.setRemainingUnits(remainingUnits);
     }
 
-   /* public units.Unit(String name){
-        this.setName(name);
-        this.setMaxHp(maxHP);
-        this.setCurrentHP(maxHp);
-        this.setMinDamage(minDamage);
-        this.setMaxDamage(maxDamage);
-        this.setAccuracy(accuracy);
-        this.setAttackInitiative(attackInitiative);
-        this.setDefendInitiative(defendInitiative);
-        this.setSplash(splash);
-        this.setFlanking(flanking);
-        this.setRemainingUnits(remainingUnits);
-    }*/
-
 
 
 
     public Unit copy(){
         if (this.isGeneral()){
             General g = new General(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking());
+            g.setValue(getValue());
             return g;
         }
         else{
-            return new Unit(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking(),getRemainingUnits());
+            Unit u = new Unit(getName(),getMaxHp(),getMinDamage(),getMaxDamage(),getAccuracy(),getAttackInitiative(),getDefendInitiative(),isSplash(),isFlanking(),getRemainingUnits());
+            u.setValue(getValue());
+            return u;
         }
     }
 
