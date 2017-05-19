@@ -49,6 +49,8 @@ public class General extends Unit {
     }
 
     public void setGarrisonAnnex(int garrisonAnnex) {
+        int oldGarrisonAnnex = this.garrisonAnnex;
+        this.maxUnits = maxUnits+ 5*(garrisonAnnex-oldGarrisonAnnex);
         this.garrisonAnnex = garrisonAnnex;
     }
 
@@ -129,6 +131,7 @@ public class General extends Unit {
         g.setOverrun(overrun);
         g.setRapidFire(rapidFire);
         g.setJuggernaut(juggernaut);
+        //important to do this last as it gets recalculated by setGarrisonAnnex
         g.setRemainingUnits(getRemainingUnits());
         return g;
     }

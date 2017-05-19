@@ -30,18 +30,36 @@ public class UnitFactory {
         return g;
 
     }
+    public Unit createCustomMMA(){
+        General g = new General("MMA",2,450,500,0.80,1.1,3,true,true);
+        g.setMaxUnits(220);
+        g.setGeneral(true);
+        return g;
 
+    }
+    public Unit createCustom270(){
+        General g = new General("270",1,120,120,1,2.7,3,false,false);
+        g.setMaxUnits(270);
+        g.setGeneral(true);
+        return g;
+    }
+    public Unit createCustomVargus(){
+        General g = new General("Vargus",200,750,1250,0.8,1.2,3,true,true);
+        g.setMaxUnits(180);
+        g.setGeneral(true);
+        return g;
+    }
 
     //General
     public Unit createNusala(){
-        General g = new General("Nusala",150,1000,1500,0.90,1.1,3,true,true);
+        General g = new General("Nusala",150,1000,1500,0.90,1.2,3,true,true);
         g.setMaxUnits(165);
         g.setGeneral(true);
         return g;
 
     }
     public Unit createMMA(){
-        General g = new General("MMA",2,450,500,0.80,1.1,3,true,true);
+        General g = new General("MMA",2,450,500,0.80,1.2,3,true,true);
         g.setMaxUnits(220);
         g.setGeneral(true);
         return g;
@@ -56,6 +74,12 @@ public class UnitFactory {
     public Unit createAnslem(){
         General g = new General("Anslem",150,1000,1500,0.5,2.7,3,true,true);
         g.setMaxUnits(150);
+        g.setGeneral(true);
+        return g;
+    }
+    public Unit createVargus(){
+        General g = new General("Vargus",200,750,1250,0.8,1.2,3,true,true);
+        g.setMaxUnits(180);
         g.setGeneral(true);
         return g;
     }

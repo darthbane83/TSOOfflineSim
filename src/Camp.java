@@ -227,6 +227,9 @@ public class Camp {
                                 if(o1.getMaxHp()<o2.getMaxHp()){
                                     return -1;
                                 }
+                                if(o1.getMaxHp()==o2.getMaxHp()){
+                                    return 1;
+                                }
                                 else{
                                     return 1;
                                 }

@@ -166,4 +166,8 @@ public class Unit {
     public void setBoss(boolean boss) {
         this.boss = boss;
     }
+
+    public String toString(){
+        return remainingUnits + name;
+    }
 }

@@ -82,6 +82,8 @@ public class findBestAttackCamp {
         //initialPlayerUnitsFinalWave.add(factory.createPlayerB(43));
 
 
+        //add Sacrifice waves as needed common setups found below already initiated
+
         //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
         //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
         //initialPlayerUnits.add(initialPlayerUnits200R);
@@ -90,6 +92,8 @@ public class findBestAttackCamp {
         //initialPlayerUnits.add(initialPlayerUnits2MMA1R);
         //initialPlayerUnits.add(initialPlayerUnits3MMA1R);
         //initialPlayerUnits.add(initialPlayerUnitsMMA220R);
+
+
         initialPlayerUnits.add(initialPlayerUnitsFinalWave);
 
         /* setup monster units
@@ -100,7 +104,7 @@ public class findBestAttackCamp {
         initialMonsterUnits = addy.createCamp(1);
         */
         Adventure addy = new ValiantLittleTailor();
-        initialMonsterUnits = addy.createCamp(12);
+        initialMonsterUnits = addy.createCamp(9);
 
         SimulateSingleCamp.findBestRegularFinalWave(initialPlayerUnits,initialMonsterUnits);
     }
