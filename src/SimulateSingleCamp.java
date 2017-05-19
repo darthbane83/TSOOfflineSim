@@ -59,11 +59,11 @@ public class SimulateSingleCamp {
         initialPlayerUnitsCustomSacrifice.add(factory.createPlayerR(100));
 
 
-
-        initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
+        initialPlayerUnitsFinalWave.add(factory.createCustomNusala());
+        //initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
         //initialPlayerUnitsFinalWave.add(factory.create270());
 
-        initialPlayerUnitsFinalWave.add(factory.createPlayerR(65));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerR(74));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerS(270));
         initialPlayerUnitsFinalWave.add(factory.createPlayerES(1));
@@ -71,7 +71,7 @@ public class SimulateSingleCamp {
         //initialPlayerUnitsFinalWave.add(factory.createPlayerBow(70));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerLB(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerXB(270));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerCN(99));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerCN(90));
 
         //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerMS(10));
@@ -83,7 +83,7 @@ public class SimulateSingleCamp {
 
 
         //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
-        initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
+        //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
         //initialPlayerUnits.add(initialPlayerUnits200R);
         //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
         //initialPlayerUnits.add(initialPlayerUnitsMMA1R);
@@ -100,7 +100,7 @@ public class SimulateSingleCamp {
         initialMonsterUnits = addy.createCamp(1);
         */
         Adventure addy = new ValiantLittleTailor();
-        initialMonsterUnits = addy.createCamp(11);
+        initialMonsterUnits = addy.createCamp(18);
 
 
         for (Unit u:initialMonsterUnits) {
@@ -305,7 +305,12 @@ public class SimulateSingleCamp {
                                             }
                                             if(lossValue<bestAttemptValue){
                                                 bestAttemptValue = lossValue;
-                                                bestAttempt = nextAttempt;
+                                                bestAttempt.clear();
+                                                for (Unit u:nextAttempt
+                                                     ) {
+                                                    bestAttempt.add(u.copy());
+                                                }
+
                                                 bestAttemptLosses = combinedLoss;
                                             }
 

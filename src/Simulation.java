@@ -14,12 +14,24 @@ public class Simulation {
 
     private void setupSim(ArrayList<Unit> initialMonsterUnits, ArrayList<Unit> initialPlayerUnits){
         combinedLoss = new ArrayList<>();
-        this.initialMonsterUnits = initialMonsterUnits;
-        this.initialPlayerUnits = initialPlayerUnits;
+        this.initialMonsterUnits.clear();
+        for (Unit u:initialMonsterUnits) {
+            if(u.getRemainingUnits()>0){
+                this.initialMonsterUnits.add(u.copy());
+            }
+
+        }
+        for (Unit u:initialPlayerUnits) {
+            if(u.getRemainingUnits()>0){
+                this.initialPlayerUnits.add(u.copy());
+            }
+
+        }
+
         //solve all unit altering general skills
-        for (Unit u :initialPlayerUnits) {
+        for (Unit u :this.initialPlayerUnits) {
             if(u.getName().equals("Nusala")){
-                for (Unit u2: initialPlayerUnits) {
+                for (Unit u2: this.initialPlayerUnits) {
                     if(u2.getName().equals("PlayerBow")||u2.getName().equals("PlayerLB")||u2.getName().equals("PlayerXB")||u2.getName().equals("PlayerMa")||u2.getName().equals("PlayerAM")){
                         u2.setFlanking(true);
                         u2.setSplash(true);
@@ -27,12 +39,12 @@ public class Simulation {
                 }
             }
             if(u.getName().equals("Anslem")){
-                for (Unit u2: initialMonsterUnits) {
+                for (Unit u2: this.initialMonsterUnits) {
                     u2.setAccuracy(0);
                 }
             }
             if(u.getName().equals("Vargus")){
-                for (Unit u2: initialMonsterUnits) {
+                for (Unit u2: this.initialMonsterUnits) {
                     u2.setFlanking(false);
                     double newDamage=(double)u2.getMinDamage()*0.95;
                     u2.setMinDamage((int)Math.floor(newDamage));
@@ -44,7 +56,7 @@ public class Simulation {
                 General g = (General)u;
 
                 if(g.getOverrun()>0){
-                    for (Unit m:initialMonsterUnits) {
+                    for (Unit m:this.initialMonsterUnits) {
                         if(m.isBoss()){
                             if(g.getOverrun()==1){
                                 m.setMaxHp((int)Math.floor((double)m.getMaxHp()*0.92));
@@ -59,7 +71,7 @@ public class Simulation {
                     }
                 }
 
-                for (Unit u2:initialPlayerUnits) {
+                for (Unit u2:this.initialPlayerUnits) {
                     if(g.getMasterPlanner()==1){
                         u2.setAccuracy(u2.getAccuracy()+0.1);
                     }
@@ -114,6 +126,7 @@ public class Simulation {
     }
 
     public ArrayList<ArrayList<Unit>> simulation(int simulationSize){
+
 
 
         ArrayList<Unit> maxLoss = new ArrayList<>();

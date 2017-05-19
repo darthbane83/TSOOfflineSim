@@ -184,7 +184,7 @@ public class UnitFactory {
 
     public Unit createPlayerCN(int remainingUnits){
         Unit u = new Unit("PlayerCN",60,60,120,0.9,3,2.4,false,false,remainingUnits);
-        u.setValue(20);
+        u.setValue(50);
         return u;
     }
     //endregion
@@ -311,6 +311,11 @@ public class UnitFactory {
 
     public Unit evilQueenIlsebille(int remainingUnits){
         Unit u = new Unit("Ilsebille, the Evil Queen", 95000, 400, 600, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit evilKing(int remainingUnits){
+        Unit u = new Unit("Evil King", 30000, 200, 300, 0.8, 2.9, 3, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
