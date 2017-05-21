@@ -60,7 +60,7 @@ public class ValiantLittleTailor extends Adventure{
         if(i==11){
             u1 = factory.epBoar(50);
             u2 = factory.epFox(60);
-            u3 = factory.Unicorn(1);
+            u3 = factory.unicorn(1);
             u4 = factory.epWolf(80);
         }
         if(i==12){

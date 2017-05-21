@@ -40,20 +40,9 @@ public class findBestAttackCamp {
         initialPlayerUnitsNusala165Bow.add(factory.createCustomNusala());
         initialPlayerUnitsNusala165Bow.add(factory.createPlayerBow(165));
 
-        initialPlayerUnitsMMA1R.add(factory.createMMA());
-        initialPlayerUnitsMMA1R.add(factory.createPlayerR(1));
-
-        initialPlayerUnits2MMA1R.add(factory.createMMA());
-        initialPlayerUnits2MMA1R.add(factory.createPlayerR(1));
-
-        initialPlayerUnits3MMA1R.add(factory.createMMA());
-        initialPlayerUnits3MMA1R.add(factory.createPlayerR(1));
-
         initialPlayerUnits200R.add(factory.create270());
         initialPlayerUnits200R.add(factory.createPlayerR(200));
 
-        initialPlayerUnitsMMA220R.add(factory.createMMA());
-        initialPlayerUnitsMMA220R.add(factory.createPlayerR(220));
 
         initialPlayerUnitsCustomSacrifice.add(factory.createMMA());
         initialPlayerUnitsCustomSacrifice.add(factory.createPlayerR(100));
@@ -85,14 +74,11 @@ public class findBestAttackCamp {
         //add Sacrifice waves as needed common setups found below already initiated
 
         //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
-        //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
+        initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
         //initialPlayerUnits.add(initialPlayerUnits200R);
         //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
-        //initialPlayerUnits.add(initialPlayerUnitsMMA1R);
-        //initialPlayerUnits.add(initialPlayerUnits2MMA1R);
-        //initialPlayerUnits.add(initialPlayerUnits3MMA1R);
-        //initialPlayerUnits.add(initialPlayerUnitsMMA220R);
 
+        //initialPlayerUnits.add(createMMAWaveR(30));
 
         initialPlayerUnits.add(initialPlayerUnitsFinalWave);
 
@@ -104,8 +90,38 @@ public class findBestAttackCamp {
         initialMonsterUnits = addy.createCamp(1);
         */
         Adventure addy = new ValiantLittleTailor();
-        initialMonsterUnits = addy.createCamp(9);
+        initialMonsterUnits = addy.createCamp(25);
 
         SimulateSingleCamp.findBestRegularFinalWave(initialPlayerUnits,initialMonsterUnits);
+    }
+
+    static ArrayList<Unit> createMMAWaveR(int recruits){
+        ArrayList<Unit> result = new ArrayList<>();
+        UnitFactory factory = new UnitFactory();
+        result.add(factory.createMMA());
+        result.add(factory.createPlayerR(recruits));
+        return result;
+    }
+    static ArrayList<Unit> createCustomNusalaWaveR(int recruits){
+        ArrayList<Unit> result = new ArrayList<>();
+        UnitFactory factory = new UnitFactory();
+        result.add(factory.createCustomNusala());
+        result.add(factory.createPlayerR(recruits));
+        return result;
+
+    }
+    static ArrayList<Unit> createStandardWaveR(int recruits){
+        ArrayList<Unit> result = new ArrayList<>();
+        UnitFactory factory = new UnitFactory();
+        result.add(factory.create270());
+        result.add(factory.createPlayerR(recruits));
+        return result;
+    }
+    static ArrayList<Unit> createCustomNusalaWaveBo(int bow){
+        ArrayList<Unit> result = new ArrayList<>();
+        UnitFactory factory = new UnitFactory();
+        result.add(factory.createCustomNusala());
+        result.add(factory.createPlayerBow(bow));
+        return result;
     }
 }

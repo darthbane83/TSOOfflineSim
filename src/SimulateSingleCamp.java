@@ -56,40 +56,42 @@ public class SimulateSingleCamp {
         initialPlayerUnitsMMA220R.add(factory.createPlayerR(220));
 
         initialPlayerUnitsCustomSacrifice.add(factory.createMMA());
-        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerR(100));
+        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerMS(50));
+        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerK(170));
 
 
-        initialPlayerUnitsFinalWave.add(factory.createCustomNusala());
-        //initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
+        //initialPlayerUnitsFinalWave.add(factory.createCustomNusala());
+        initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
         //initialPlayerUnitsFinalWave.add(factory.create270());
 
-        initialPlayerUnitsFinalWave.add(factory.createPlayerR(74));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerR(120));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerS(270));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerES(1));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerES(1));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerC(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerBow(70));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerLB(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerXB(270));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerCN(90));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerCN(44));
 
         //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerMS(10));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerK(18));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerMA(5));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerMM(250));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerMS(68));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerK(17));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerMA(6));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerMM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerAM(260));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerB(43));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerB(80));
 
+        initialPlayerUnits.add(initialPlayerUnitsNusala1R);
 
-        //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
-        //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
         //initialPlayerUnits.add(initialPlayerUnits200R);
         //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
-        //initialPlayerUnits.add(initialPlayerUnitsMMA1R);
-        //initialPlayerUnits.add(initialPlayerUnits2MMA1R);
+        initialPlayerUnits.add(initialPlayerUnitsMMA1R);
+        initialPlayerUnits.add(initialPlayerUnits2MMA1R);
         //initialPlayerUnits.add(initialPlayerUnits3MMA1R);
+        //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
         //initialPlayerUnits.add(initialPlayerUnitsMMA220R);
+        initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
         initialPlayerUnits.add(initialPlayerUnitsFinalWave);
 
         /* setup monster units
@@ -99,8 +101,8 @@ public class SimulateSingleCamp {
         Adventure addy = new HanselAndGretel();
         initialMonsterUnits = addy.createCamp(1);
         */
-        Adventure addy = new ValiantLittleTailor();
-        initialMonsterUnits = addy.createCamp(18);
+        Adventure addy = new PiedPiperOfHarmelin();
+        initialMonsterUnits = addy.createCamp(13);
 
 
         for (Unit u:initialMonsterUnits) {
@@ -213,7 +215,7 @@ public class SimulateSingleCamp {
 
 
         //CUSTOMIZE which generals should be available
-        for (int h=1; h<4;h++){
+        for (int h=0; h<4;h++){
             if (h== 0){
                 g = (General)factory.createCustomMMA();
             }
@@ -400,9 +402,7 @@ public class SimulateSingleCamp {
                 for (Unit u2: thisAttempt ) {
                     if(u2.getName().equals(u.getName())&& (u.getRemainingUnits()<u2.getRemainingUnits())){
                         int difference = u2.getRemainingUnits()-u.getRemainingUnits();
-                        if (difference>0){
-                            foundImprovement = true;
-                        }
+
                         //try adding it to each of the relevant unit types
                         nextAttempt.clear();
                         for (Unit u3:thisAttempt) {
@@ -436,6 +436,7 @@ public class SimulateSingleCamp {
                                     //newBestAttemptLosses = combinedLoss;
 
                                 }
+
                             }
                         }
 

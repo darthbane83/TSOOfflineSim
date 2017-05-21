@@ -18,7 +18,7 @@ public class UnitFactory {
         g.setOverrun(3);
         g.setBattleFrenzy(3);
         g.setGarrisonAnnex(3);
-        g.setWeeklyMaintenance(1);
+        g.setWeeklyMaintenance(2);
         return g;
     }
 
@@ -142,7 +142,7 @@ public class UnitFactory {
 
     public Unit createPlayerM(int remainingUnits){
         Unit u = new Unit("PlayerM",60,20,40,0.8,2,1.1,false,false,remainingUnits);
-        u.setValue(3);
+        u.setValue(4);
         return u;
     }
 
@@ -237,6 +237,12 @@ public class UnitFactory {
 
     //region cultists
 
+    public Unit darkMagician(int remainingUnits){
+        Unit u = new Unit("Dark Magician", 30000, 2000, 2500, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+
     //endregion
 
 
@@ -278,17 +284,32 @@ public class UnitFactory {
         return u;
     }
     public Unit giantBogor(int remainingUnits){
-        Unit u = new Unit("Giant Bogor", 90000, 100, 300, 0.6, 2.9, 3, true, false, remainingUnits);
+        Unit u = new Unit("Giant Bogor", 90000, 100, 300, 0.6, 3.9, 3, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
     public Unit giantGogor(int remainingUnits){
-        Unit u = new Unit("GiantGogor", 70000, 100, 250, 0.8, 2.95, 3.1, true, false, remainingUnits);
+        Unit u = new Unit("GiantGogor", 70000, 100, 250, 0.8, 3.95, 3.1, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
-    public Unit Unicorn(int remainingUnits){
+    public Unit unicorn(int remainingUnits){
         Unit u = new Unit("Unicorn", 30000, 250, 400, 0.9, 2.95, 2.95, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit lyingGoat(int remainingUnits){
+        Unit u = new Unit("Lying Goat", 25000, 100, 150, 0.85, 2.95, 2.95, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit piedPiperOfHarmelin(int remainingUnits){
+        Unit u = new Unit("Pied Piper of Harmelin", 55000, 200, 450, 0.9, 1.95, 2.95, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit kingOfRats(int remainingUnits){
+        Unit u = new Unit("King of Rats", 40000, 200, 800, 0.6, 3.95, 2.96, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
@@ -296,7 +317,11 @@ public class UnitFactory {
 
     //region Deserter
     public Unit elitesoldierDeserter(int remainingUnits){
-        return  new Unit("EliteSoldier Deserter", 120, 20, 40, 0.7, 2.3, 1.3, false, false, remainingUnits);
+        return  new Unit("EliteSoldier Deserter", 120, 20, 40, 0.7, 2.03, 1.3, false, false, remainingUnits);
+    }
+
+    public Unit crossbowmanDeserter(int remainingUnits){
+        return  new Unit("Crossbowman Deserter", 10, 45, 90, 0.6, 2.04, 2.25, false, false, remainingUnits);
     }
     //endregion
 
@@ -314,16 +339,27 @@ public class UnitFactory {
         u.setBoss(true);
         return u;
     }
+    public Unit greedyInnKeeper(int remainingUnits){
+        Unit u = new Unit("Greedy Inn-Keeper", 50000, 1500, 2000, 0.8, 2.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit theMayor(int remainingUnits){
+        Unit u = new Unit("The Mayor", 95000, 400, 600, 0.8, 3.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+
     public Unit evilKing(int remainingUnits){
         Unit u = new Unit("Evil King", 30000, 200, 300, 0.8, 2.9, 3, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
     public Unit royalRecruit(int remainingUnits){
-        return  new Unit("Royal Recruit", 120, 30, 60, 0.85, 2.0, 1.0, false, false, remainingUnits);
+        return  new Unit("Royal Recruit", 120, 30, 60, 0.85, 2.1, 1.0, false, false, remainingUnits);
     }
     public Unit royalMilitia(int remainingUnits){
-        return  new Unit("Royal Militia", 160, 70, 90, 0.95, 2.1, 1.1, true, false, remainingUnits);
+        return  new Unit("Royal Militia", 160, 70, 90, 0.95, 2.15, 1.1, true, false, remainingUnits);
     }
     public Unit royalBowman(int remainingUnits){
         return  new Unit("Royal Bowman", 40, 60, 120, 0.85, 2.4, 2.1, false, false, remainingUnits);
