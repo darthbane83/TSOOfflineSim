@@ -1,8 +1,16 @@
 Known Issues:
-General Skillsystem existing but not tested.
+
 Cleave and Unstoppable Charge Skills do not support partial Splash chance for 1-2 points invested. Instead worst case scenario of no unit splashing is assumed.
 Army size is not checked
-unit initiative not correct for most units
+
+Features:	mediocre working "find best attack" for normal player units
+			working simulation for a single camp with multiple waves
+			templates for standard bandit, royal army, epic wildlife and basic ali baba units.
+			templates for adventures Pied Piper of Harmelin, Valiant little Tailor, Ali baba the Young Woodcutter, Hansel and Gretel. For all guides camps are numbered by the natural way to clear them from the landing zones. Screenshots of the adventure maps with camp numbers exist in the adventure maps folder and are taken from guides from http://settlersonlinewiki.eu/en/adventures.
+
+23.05.	Ali baba basic units (initiative order of dune marksmen/desert marksmen unclear and irrelevant for young woodcutter) and ali baba young woodcutter added
+21.05.	Pied Piper of Hamelin and units added
+20.05.	VLT and units added
 16.05.  Added epic wildlife units(partly potential incorrect initiative)
 		Added Hansel and Gretel adventure and (first 13)wildlife camps
 		Added a custom Anslem general with skills

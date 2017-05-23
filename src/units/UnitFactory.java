@@ -19,6 +19,7 @@ public class UnitFactory {
         g.setBattleFrenzy(3);
         g.setGarrisonAnnex(3);
         g.setWeeklyMaintenance(2);
+        g.setMasterPlanner(1);
         return g;
     }
 
@@ -391,7 +392,69 @@ public class UnitFactory {
 
 
 
-    //Ali baba
+    //region Ali Baba
+    //sword clasher<sword wielder<sword master<Horseman<desert marksman<mounted bowman<stone cannon<boss
+    //Horseman<dune marksman<mounted Bowman
+    //bosses in no particular order sofar
+    public Unit swordClasher(int remainingUnits){
+        return  new Unit("Sword Clasher", 100, 75, 150, 0.8, 2.0, 1.0, true, false, remainingUnits);
+    }
+    public Unit swordWielder(int remainingUnits){
+        return  new Unit("Sword Wielder", 300, 25, 50, 0.8, 2.1, 1.1, true, false, remainingUnits);
+    }
+    public Unit swordMaster(int remainingUnits){
+        return  new Unit("Sword Master", 500, 25, 50, 0.8, 2.2, 1.2, true, false, remainingUnits);
+    }
+    public Unit horseman(int remainingUnits){
+        return  new Unit("Horseman", 50, 50, 100, 0.8, 1.0, 2.0, true, false, remainingUnits);
+    }
+    public Unit desertMarksman(int remainingUnits){
+        return  new Unit("Desert Marksman", 80, 50, 100, 0.8, 2.3, 2.1, true, true, remainingUnits);
+    }
+    public Unit duneMarksman(int remainingUnits){
+        return  new Unit("Dune Marksman", 30, 100, 200, 0.8, 2.4, 2.2, true, false, remainingUnits);
+    }
+    public Unit mountedBowman(int remainingUnits){
+        return  new Unit("Mounted Bowman", 70, 35, 70, 0.8, 1.1, 2.3, true, true, remainingUnits);
+    }
+    public Unit stoneCannon(int remainingUnits){
+        return  new Unit("Stone Cannon", 100, 150, 300, 0.8, 3.0, 2.4, true, false, remainingUnits);
+    }
+
+    public Unit shrewdThief(int remainingUnits){
+        Unit u = new Unit("Shrewd Thief", 1000, 250, 500, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit greedyThief(int remainingUnits){
+        Unit u = new Unit("Greedy Thief", 10000, 2500, 5000, 0.8, 3.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit mysteriousThief(int remainingUnits){
+        Unit u = new Unit("Mysterious Thief", 20000, 1000, 2000, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit smartThief(int remainingUnits){
+        Unit u = new Unit("Smart Thief", 5000, 500, 1000, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit treacherousThief(int remainingUnits){
+        Unit u = new Unit("treacherous Thief", 50000, 250, 500, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit banditLord(int remainingUnits){
+        Unit u = new Unit("Bandit Lord", 30000, 3500, 7000, 0.9, 2.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+
+
+
+    //endregion
 
 
 

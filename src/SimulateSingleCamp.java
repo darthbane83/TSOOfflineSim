@@ -56,7 +56,7 @@ public class SimulateSingleCamp {
         initialPlayerUnitsMMA220R.add(factory.createPlayerR(220));
 
         initialPlayerUnitsCustomSacrifice.add(factory.createMMA());
-        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerMS(50));
+        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerMS(20));
         initialPlayerUnitsCustomSacrifice.add(factory.createPlayerK(170));
 
 
@@ -75,23 +75,22 @@ public class SimulateSingleCamp {
         //initialPlayerUnitsFinalWave.add(factory.createPlayerCN(44));
 
         //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(270));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerMS(68));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerK(17));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerMS(26));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerK(50));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerMA(6));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerMM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerAM(260));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerB(80));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerB(89));
 
-        initialPlayerUnits.add(initialPlayerUnitsNusala1R);
-
+        //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
         //initialPlayerUnits.add(initialPlayerUnits200R);
         //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
-        initialPlayerUnits.add(initialPlayerUnitsMMA1R);
-        initialPlayerUnits.add(initialPlayerUnits2MMA1R);
+        //initialPlayerUnits.add(initialPlayerUnitsMMA1R);
+        //initialPlayerUnits.add(initialPlayerUnits2MMA1R);
         //initialPlayerUnits.add(initialPlayerUnits3MMA1R);
         //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
         //initialPlayerUnits.add(initialPlayerUnitsMMA220R);
-        initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
+        //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
         initialPlayerUnits.add(initialPlayerUnitsFinalWave);
 
         /* setup monster units
@@ -101,8 +100,8 @@ public class SimulateSingleCamp {
         Adventure addy = new HanselAndGretel();
         initialMonsterUnits = addy.createCamp(1);
         */
-        Adventure addy = new PiedPiperOfHarmelin();
-        initialMonsterUnits = addy.createCamp(13);
+        Adventure addy = new AliBabaTheYoungWoodcutter();
+        initialMonsterUnits = addy.createCamp(3);
 
 
         for (Unit u:initialMonsterUnits) {
