@@ -28,6 +28,9 @@ public class UnitFactory {
         g.setMaxUnits(165);
         g.setGeneral(true);
         g.setRapidFire(3);
+        g.setSniperTraining(3);
+        g.setUnstoppableCharge(3);
+        g.setGarrisonAnnex(3);
         return g;
 
     }
@@ -45,7 +48,7 @@ public class UnitFactory {
         return g;
     }
     public Unit createCustomVargus(){
-        General g = new General("Vargus",200,750,1250,0.8,1.2,3,true,true);
+        General g = new General("Vargus",200,750,1250,0.8,1.2,3,true,false);
         g.setMaxUnits(180);
         g.setGeneral(true);
         return g;
@@ -79,7 +82,7 @@ public class UnitFactory {
         return g;
     }
     public Unit createVargus(){
-        General g = new General("Vargus",200,750,1250,0.8,1.2,3,true,true);
+        General g = new General("Vargus",200,750,1250,0.8,1.2,3,true,false);
         g.setMaxUnits(180);
         g.setGeneral(true);
         return g;
@@ -191,45 +194,50 @@ public class UnitFactory {
     //endregion
 
     //region Bandits
-    public Unit bWildMary(int remainingUnits){
+    public Unit wildMary(int remainingUnits){
         Unit u = new Unit("Wild Mary",60000, 740, 800, 0.5, 1,  2.0, true, false,remainingUnits);
         u.setBoss(true);
         return u;
     }
-    public Unit bChuck(int remainingUnits){
-        Unit u = new Unit("Chuck",9000, 2000, 2500, 0.5, 3,  3.0, true, false,remainingUnits);
+    public Unit chuck(int remainingUnits){
+        Unit u = new Unit("Chuck",9000, 2000, 2500, 0.5, 3.0,  1.0, true, false,remainingUnits);
         u.setBoss(true);
         return u;
     }
-    public Unit bMetalToothed(int remainingUnits) {
-        Unit u = new Unit("Metal Toothed",11000,250,500,0.5, 3, 2.0,true,false,remainingUnits);
+    public Unit ironFist(int remainingUnits){
+        Unit u = new Unit("Iron Fist",45000, 200, 250, 0.85, 1.0, 3.0,true,false,remainingUnits);
         u.setBoss(true);
         return u;
     }
-    public Unit bScavenger(int remainingUnits){
-        return new Unit("Scavenger",40, 15,30, 0.6, 2, 2.1,false, false, remainingUnits);
+    public Unit metalTooth(int remainingUnits) {
+        Unit u = new Unit("Metal Tooth",11000,250,500,0.5, 1.0 , 2.0,true,false,remainingUnits);
+        u.setBoss(true);
+        return u;
     }
-    public Unit bThug(int remainingUnits) {
-        return new Unit("Thug", 60, 20, 40, 0.6, 2.1, 2.2, false, false, remainingUnits);
+    public Unit scavenger(int remainingUnits){
+        return new Unit("Scavenger",40, 15,30, 0.6, 2, 1.1,false, false, remainingUnits);
     }
-    public Unit bGuardDog(int remainingUnits) {
-        return new Unit("Guard Dog", 5, 5, 10, 0.6, 1, 2.05, false, true, remainingUnits);
+    public Unit thug(int remainingUnits) {
+        return new Unit("Thug", 60, 20, 40, 0.6, 2.1, 1.2, false, false, remainingUnits);
     }
-    public Unit bRoughneck(int remainingUnits) {
-        return new Unit("Roughneck", 90, 20, 40, 0.6, 2.2, 2.3, false, false, remainingUnits);
+    public Unit guardDog(int remainingUnits) {
+        return new Unit("Guard Dog", 5, 5, 10, 0.6, 1, 1.05, false, true, remainingUnits);
     }
-    public Unit bStoneThrower(int remainingUnits) {
+    public Unit roughneck(int remainingUnits) {
+        return new Unit("Roughneck", 90, 20, 40, 0.6, 2.2, 1.3, false, false, remainingUnits);
+    }
+    public Unit stoneThrower(int remainingUnits) {
         return new Unit("Stone Thrower", 10, 20, 40, 0.6, 2.3, 2.4, false, false, remainingUnits);
     }
-    public Unit bRanger(int remainingUnits) {
+    public Unit ranger(int remainingUnits) {
         return new Unit("Ranger", 10, 30, 0, 0.6, 2.4, 2.5, false, false, remainingUnits);
     }
-    public Unit bSkunk(int remainingUnits) {
+    public Unit skunk(int remainingUnits) {
         Unit u = new Unit("Skunk", 100, 1, 100, 0.5, 3, 2.6, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
-    public Unit bOneEyedBert(int remainingUnits) {
+    public Unit oneEyedBert(int remainingUnits) {
         Unit u = new Unit("One-Eyed Bert", 6000, 300, 500, 0.5, 3.1, 2.7, true, false, remainingUnits);
         u.setBoss(true);
         return u;
@@ -280,7 +288,7 @@ public class UnitFactory {
         return new Unit("Giant", 160, 60, 90, 0.95, 3.0, 2.4, true, false, remainingUnits);
     }
     public Unit furiousBoar(int remainingUnits){
-        Unit u = new Unit("Furious Boar", 50000, 200, 300, 0.9, 2.9, 3, true, false, remainingUnits);
+        Unit u = new Unit("Furious Boar", 50000, 200, 300, 0.9, 2.95, 2.95, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
@@ -294,8 +302,13 @@ public class UnitFactory {
         u.setBoss(true);
         return u;
     }
+    public Unit giantBear(int remainingUnits){
+        Unit u = new Unit("Giant Bear", 55000, 400, 750, 0.6, 3.95, 3.1, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
     public Unit unicorn(int remainingUnits){
-        Unit u = new Unit("Unicorn", 30000, 250, 400, 0.9, 2.95, 2.95, true, false, remainingUnits);
+        Unit u = new Unit("Unicorn", 30000, 250, 400, 0.9, 2.9, 2.9, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
@@ -311,6 +324,11 @@ public class UnitFactory {
     }
     public Unit kingOfRats(int remainingUnits){
         Unit u = new Unit("King of Rats", 40000, 200, 800, 0.6, 3.95, 2.96, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit giantBat(int remainingUnits){
+        Unit u = new Unit("Giant Bat", 150000, 450, 900, 0.9, 1.9, 2.96, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
@@ -335,6 +353,16 @@ public class UnitFactory {
 
     //
 
+    public Unit thugLeader(int remainingUnits){
+        Unit u = new Unit("Thug Leader", 40000, 200, 300, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit rivalingTailor(int remainingUnits){
+        Unit u = new Unit("Rivaling Tailor", 40000, 150, 250, 0.75, 2.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
     public Unit evilQueenIlsebille(int remainingUnits){
         Unit u = new Unit("Ilsebille, the Evil Queen", 95000, 400, 600, 0.8, 2.9, 3, true, false, remainingUnits);
         u.setBoss(true);
@@ -347,6 +375,31 @@ public class UnitFactory {
     }
     public Unit theMayor(int remainingUnits){
         Unit u = new Unit("The Mayor", 95000, 400, 600, 0.8, 3.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit royalCaptain(int remainingUnits){
+        Unit u = new Unit("Royal Captain", 45000, 300, 500, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit royalJuggernaut(int remainingUnits){
+        Unit u = new Unit("Royal Juggernaut", 70000, 200, 1000, 0.35, 3.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit royalHuntsmenLeader(int remainingUnits){
+        Unit u = new Unit("Royal Huntsmen Leader", 45000, 200, 700, 0.9, 3.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit theEvilStepmother(int remainingUnits){
+        Unit u = new Unit("The Evil Stepmother", 55000, 400, 600, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit assassin(int remainingUnits){
+        Unit u = new Unit("Assassin", 30000, 200, 300, 0.8, 1.9, 3.1, true, true, remainingUnits);
         u.setBoss(true);
         return u;
     }
@@ -426,8 +479,29 @@ public class UnitFactory {
         u.setBoss(true);
         return u;
     }
+    public Unit grayedThief(int remainingUnits){
+        Unit u = new Unit("Grayed Thief", 500, 375, 700, 0.8, 2.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit scarredThief(int remainingUnits){
+        Unit u = new Unit("Scarred Thief", 500, 150, 300, 0.8, 1.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit snootyThief(int remainingUnits){
+        Unit u = new Unit("Snooty Thief", 150000, 500, 1000, 0.8, 2.9, 3, true, false, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+
     public Unit greedyThief(int remainingUnits){
         Unit u = new Unit("Greedy Thief", 10000, 2500, 5000, 0.8, 3.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit sillyThief(int remainingUnits){
+        Unit u = new Unit("Silly Thief", 50000, 2000, 4000, 0.8, 3.9, 3, true, false, remainingUnits);
         u.setBoss(true);
         return u;
     }
@@ -448,6 +522,11 @@ public class UnitFactory {
     }
     public Unit banditLord(int remainingUnits){
         Unit u = new Unit("Bandit Lord", 30000, 3500, 7000, 0.9, 2.9, 3, true, true, remainingUnits);
+        u.setBoss(true);
+        return u;
+    }
+    public Unit boulderWorm(int remainingUnits){
+        Unit u = new Unit("Boulder Worm", 200000, 150, 300, 0.8, 3.9, 3, true, true, remainingUnits);
         u.setBoss(true);
         return u;
     }

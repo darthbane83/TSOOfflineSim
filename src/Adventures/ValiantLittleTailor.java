@@ -106,7 +106,7 @@ public class ValiantLittleTailor extends Adventure{
             u2 = factory.royalLongbowman(120);
         }
         if(i==22){
-            u1 = factory.royalRecruit(160);
+            u1 = factory.royalRecruit(170);
 
         }
         if(i==23){

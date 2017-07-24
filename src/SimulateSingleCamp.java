@@ -15,11 +15,13 @@ public class SimulateSingleCamp {
         ArrayList<Unit> initialPlayerUnitsMMA1R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnits2MMA1R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnits3MMA1R = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnitsVarg1R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnitsMMA220R = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnits200R = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnits200Bow = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnitsCustomSacrifice = new ArrayList<>();
-        ArrayList<Unit> initialPlayerUnitsNusala165R = new ArrayList<>();
-        ArrayList<Unit> initialPlayerUnitsNusala165Bow = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnitsNusala180R = new ArrayList<>();
+        ArrayList<Unit> initialPlayerUnitsNusala180Bow = new ArrayList<>();
         ArrayList<Unit> initialPlayerUnitsFinalWave = new ArrayList<>();
         StringBuilder builder = new StringBuilder();
 
@@ -34,11 +36,11 @@ public class SimulateSingleCamp {
         initialPlayerUnitsNusala1R.add(factory.createCustomNusala());
         initialPlayerUnitsNusala1R.add(factory.createPlayerR(1));
 
-        initialPlayerUnitsNusala165R.add(factory.createCustomNusala());
-        initialPlayerUnitsNusala165R.add(factory.createPlayerR(165));
+        initialPlayerUnitsNusala180R.add(factory.createCustomNusala());
+        initialPlayerUnitsNusala180R.add(factory.createPlayerR(180));
 
-        initialPlayerUnitsNusala165Bow.add(factory.createCustomNusala());
-        initialPlayerUnitsNusala165Bow.add(factory.createPlayerBow(165));
+        initialPlayerUnitsNusala180Bow.add(factory.createCustomNusala());
+        initialPlayerUnitsNusala180Bow.add(factory.createPlayerBow(180));
 
         initialPlayerUnitsMMA1R.add(factory.createMMA());
         initialPlayerUnitsMMA1R.add(factory.createPlayerR(1));
@@ -49,48 +51,66 @@ public class SimulateSingleCamp {
         initialPlayerUnits3MMA1R.add(factory.createMMA());
         initialPlayerUnits3MMA1R.add(factory.createPlayerR(1));
 
+        initialPlayerUnitsVarg1R.add(factory.createCustomVargus());
+        initialPlayerUnitsVarg1R.add(factory.createPlayerR(1));
+
         initialPlayerUnits200R.add(factory.create270());
         initialPlayerUnits200R.add(factory.createPlayerR(200));
+
+        initialPlayerUnits200Bow.add(factory.create270());
+        initialPlayerUnits200Bow.add(factory.createPlayerBow(200));
 
         initialPlayerUnitsMMA220R.add(factory.createMMA());
         initialPlayerUnitsMMA220R.add(factory.createPlayerR(220));
 
-        initialPlayerUnitsCustomSacrifice.add(factory.createMMA());
-        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerMS(20));
-        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerK(170));
+        initialPlayerUnitsCustomSacrifice.add(factory.createCustomNusala());
+        initialPlayerUnitsCustomSacrifice.add(factory.createPlayerBow(37));
+        //initialPlayerUnitsCustomSacrifice.add(factory.createPlayerK(180));
+        //initialPlayerUnitsCustomSacrifice.add(factory.createPlayerMS(50));
 
 
         //initialPlayerUnitsFinalWave.add(factory.createCustomNusala());
-        initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
-        //initialPlayerUnitsFinalWave.add(factory.create270());
+        //initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
+        //initialPlayerUnitsFinalWave.add(factory.createCustomVargus());
+        initialPlayerUnitsFinalWave.add(factory.create270());
+        //initialPlayerUnitsFinalWave.add(factory.createMMA());
 
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerR(120));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerM(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerS(270));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerR(105));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerM(70));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerS(10));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerES(1));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerC(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerBow(70));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerC(180));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerBow(155));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerLB(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerXB(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerCN(44));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerXB(59));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerCN(59));
 
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(270));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerMS(26));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerK(50));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerMA(6));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerMM(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerAM(260));
-        initialPlayerUnitsFinalWave.add(factory.createPlayerB(89));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(165));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerMS(1));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerK(26));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerMA(14));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerAM(44));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerMM(270));
+        //initialPlayerUnitsFinalWave.add(factory.createPlayerB(144));
+
+
+        //initialPlayerUnits.add(initialPlayerUnitsNusala180Bow);
+        //initialPlayerUnits.add(initialPlayerUnitsMMA220R);
+
 
         //initialPlayerUnits.add(initialPlayerUnitsNusala1R);
         //initialPlayerUnits.add(initialPlayerUnits200R);
+        //initialPlayerUnits.add(initialPlayerUnits200R);
+        //initialPlayerUnits.add(initialPlayerUnits200Bow);
         //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
-        //initialPlayerUnits.add(initialPlayerUnitsMMA1R);
-        //initialPlayerUnits.add(initialPlayerUnits2MMA1R);
-        //initialPlayerUnits.add(initialPlayerUnits3MMA1R);
-        //initialPlayerUnits.add(initialPlayerUnitsNusala165Bow);
+        initialPlayerUnits.add(initialPlayerUnitsMMA1R);
+        initialPlayerUnits.add(initialPlayerUnits2MMA1R);
+        initialPlayerUnits.add(initialPlayerUnits3MMA1R);
+        //initialPlayerUnits.add(initialPlayerUnitsVarg1R);
         //initialPlayerUnits.add(initialPlayerUnitsMMA220R);
-        //initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
+        //initialPlayerUnits.add(initialPlayerUnitsNusala180Bow);
+        //initialPlayerUnits.add(initialPlayerUnitsNusala180R);
+        initialPlayerUnits.add(initialPlayerUnitsCustomSacrifice);
         initialPlayerUnits.add(initialPlayerUnitsFinalWave);
 
         /* setup monster units
@@ -100,8 +120,8 @@ public class SimulateSingleCamp {
         Adventure addy = new HanselAndGretel();
         initialMonsterUnits = addy.createCamp(1);
         */
-        Adventure addy = new AliBabaTheYoungWoodcutter();
-        initialMonsterUnits = addy.createCamp(3);
+        Adventure addy = new ThirdThief();
+        initialMonsterUnits = addy.createCamp(17);
 
 
         for (Unit u:initialMonsterUnits) {
@@ -469,6 +489,8 @@ public class SimulateSingleCamp {
         ArrayList<Unit> averageCombinedLoss=combinedLoss.get(0);
         ArrayList<Unit> minLoss=combinedLoss.get(1);
         ArrayList<Unit> maxLoss=combinedLoss.get(2);
+        double maxLossValue = 0;
+        double averageLossValue = 0;
 
         StringBuilder builder =new StringBuilder();
         builder.append(System.getProperty("line.separator"));
@@ -483,13 +505,23 @@ public class SimulateSingleCamp {
         for (Unit u:averageCombinedLoss) {
             builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits()/(double) simulationSize);
             builder.append(System.getProperty("line.separator"));
+            if(!(u.getValue()==Double.MAX_VALUE)){
+                averageLossValue += u.getValue()*(u.getRemainingUnits()/simulationSize);
+            }
+
         }
+
+
 
         builder.append("Maximum losses:"+System.getProperty("line.separator"));
 
         for (Unit u:maxLoss) {
             builder.append(u.getName() + " lost: " + (double)u.getRemainingUnits());
             builder.append(System.getProperty("line.separator"));
+            if(!(u.getValue()==Double.MAX_VALUE)){
+                maxLossValue += u.getValue()*u.getRemainingUnits();
+            }
+
         }
         for (Unit u:minLoss) {
             for (Unit u2:thisWaveMonsterUnits) {
@@ -499,6 +531,9 @@ public class SimulateSingleCamp {
                 }
             }
         }
+        builder.append("Maximum loss Value: "+ maxLossValue);
+        builder.append(System.getProperty("line.separator"));
+        builder.append("Average loss Value: "+ averageLossValue);
         return builder.toString();
 
     }

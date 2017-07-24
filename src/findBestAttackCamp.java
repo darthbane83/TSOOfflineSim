@@ -52,15 +52,15 @@ public class findBestAttackCamp {
         initialPlayerUnitsFinalWave.add(factory.createCustomAnslem());
         //initialPlayerUnitsFinalWave.add(factory.create270());
 
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerR(65));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerR(120));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerS(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerES(1));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerES(1));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerC(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerBow(70));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerLB(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerXB(270));
-        //initialPlayerUnitsFinalWave.add(factory.createPlayerCN(99));
+        initialPlayerUnitsFinalWave.add(factory.createPlayerCN(44));
 
         //initialPlayerUnitsFinalWave.add(factory.createPlayerSM(270));
         //initialPlayerUnitsFinalWave.add(factory.createPlayerMS(10));
@@ -90,7 +90,7 @@ public class findBestAttackCamp {
         initialMonsterUnits = addy.createCamp(1);
         */
         Adventure addy = new ValiantLittleTailor();
-        initialMonsterUnits = addy.createCamp(25);
+        initialMonsterUnits = addy.createCamp(22);
 
         SimulateSingleCamp.findBestRegularFinalWave(initialPlayerUnits,initialMonsterUnits);
     }
